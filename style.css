@@ -1,0 +1,415 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #fffaf7;
+    color: #3b2926;
+    font-family: "Poppins", sans-serif;
+}
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 40px;
+
+    background:
+        linear-gradient(
+            rgba(50, 25, 20, 0.35),
+            rgba(50, 25, 20, 0.55)
+        ),
+        url("photos/wedding.jpeg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    color: white;
+    max-width: 800px;
+
+    animation: fadeUp 1.5s ease;
+}
+
+.small-title,
+.section-label {
+    letter-spacing: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(70px, 12vw, 150px);
+    line-height: 0.8;
+    margin: 25px 0;
+}
+
+.hero h1 span {
+    font-style: italic;
+    font-weight: 400;
+}
+
+.subtitle {
+    max-width: 550px;
+    margin: 30px auto;
+
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+button {
+    border: none;
+
+    padding: 16px 30px;
+
+    border-radius: 50px;
+
+    background: white;
+    color: #6b3d36;
+
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+
+.section {
+    max-width: 1100px;
+    margin: auto;
+
+    padding: 120px 30px;
+}
+
+.section-label {
+    color: #a26b60;
+    margin-bottom: 15px;
+}
+
+.section h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(45px, 7vw, 80px);
+
+    font-weight: 500;
+
+    margin-bottom: 20px;
+}
+
+.intro {
+    color: #765e59;
+    max-width: 600px;
+
+    line-height: 1.8;
+}
+
+
+/* TIMELINE */
+
+.timeline {
+    margin-top: 80px;
+
+    border-left: 1px solid #d7b8b0;
+
+    padding-left: 40px;
+}
+
+.timeline-item {
+    position: relative;
+
+    margin-bottom: 70px;
+}
+
+.timeline-item::before {
+    content: "";
+
+    width: 14px;
+    height: 14px;
+
+    background: #a26b60;
+
+    border-radius: 50%;
+
+    position: absolute;
+
+    left: -47px;
+    top: 8px;
+}
+
+.year {
+    font-size: 13px;
+    letter-spacing: 3px;
+
+    color: #a26b60;
+
+    margin-bottom: 10px;
+}
+
+.timeline-card h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 32px;
+
+    margin-bottom: 10px;
+}
+
+.timeline-card p {
+    max-width: 600px;
+
+    color: #765e59;
+    line-height: 1.8;
+}
+
+
+/* GALLERY */
+
+.gallery-section {
+    max-width: 1200px;
+}
+
+.gallery {
+    margin-top: 50px;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+.photo {
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.photo img {
+    width: 100%;
+    height: 450px;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.6s ease;
+}
+
+.photo:hover img {
+    transform: scale(1.05);
+}
+
+
+/* 21 REASONS */
+
+.reasons {
+    text-align: center;
+}
+
+.reasons-grid {
+    margin-top: 50px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+
+    text-align: left;
+}
+
+.reasons-grid div {
+    padding: 22px;
+
+    background: white;
+
+    border: 1px solid #f0dfda;
+
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+.reasons-grid div:hover {
+    transform: translateY(-5px);
+}
+
+
+/* MESSAGE */
+
+.message-section {
+    padding: 120px 30px;
+
+    display: flex;
+    justify-content: center;
+
+    background: #f4e7e2;
+}
+
+.message-card {
+    max-width: 750px;
+
+    text-align: center;
+}
+
+.message-card h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 70px;
+
+    font-weight: 500;
+
+    margin-bottom: 40px;
+}
+
+.message-card p:not(.section-label):not(.final-line) {
+    font-size: 17px;
+
+    line-height: 2;
+
+    margin-bottom: 25px;
+
+    color: #654e49;
+}
+
+.final-line {
+    margin-top: 40px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 32px;
+
+    font-style: italic;
+}
+
+
+/* FINAL */
+
+.final-section {
+    min-height: 70vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(45, 25, 20, 0.5),
+            rgba(45, 25, 20, 0.65)
+        ),
+        url("photos/photo4.jpeg");
+
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+}
+
+.final-section p {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 35px;
+
+    font-style: italic;
+}
+
+.final-section h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(60px, 10vw, 120px);
+
+    line-height: 0.9;
+
+    font-weight: 500;
+
+    margin: 20px 0 35px;
+}
+
+.final-section span {
+    letter-spacing: 2px;
+}
+
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+
+    padding: 30px;
+
+    font-size: 13px;
+
+    color: #866c66;
+}
+
+
+/* ANIMATION */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .hero {
+        padding: 25px;
+    }
+
+    .hero h1 {
+        font-size: 75px;
+    }
+
+    .section {
+        padding: 80px 22px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .photo img {
+        height: 400px;
+    }
+
+    .reasons-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .message-card h2 {
+        font-size: 55px;
+    }
+
+}
