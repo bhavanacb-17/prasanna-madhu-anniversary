@@ -1,74 +1,68 @@
+/* =========================
+   BEGIN THEIR STORY BUTTON
+========================= */
+
 function startJourney() {
-    document.getElementById("story").scrollIntoView({
-        behavior: "smooth"
-    });
+    const story = document.getElementById("story");
+
+    if (story) {
+        story.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    }
 }
 
 
-/* Create floating hearts */
+/* =========================
+   FLOATING HEARTS
+========================= */
 
 const heartsContainer = document.querySelector(".hearts");
 
 function createHeart() {
 
+    if (!heartsContainer) return;
+
     const heart = document.createElement("div");
 
+    heart.className = "floating-heart";
     heart.innerHTML = "♥";
 
-    heart.style.position = "fixed";
-    heart.style.bottom = "-30px";
+    // Random horizontal position
     heart.style.left = Math.random() * 100 + "vw";
 
+    // Random size
     heart.style.fontSize =
         Math.random() * 15 + 10 + "px";
 
+    // Random animation duration
+    const duration =
+        Math.random() * 3 + 5;
+
+    heart.style.animationDuration =
+        duration + "s";
+
+    // Slightly random opacity
     heart.style.opacity =
-        Math.random() * 0.5 + 0.2;
-
-    heart.style.pointerEvents = "none";
-
-    heart.style.zIndex = "999";
-
-    heart.style.animation =
-        "floatHeart 6s linear forwards";
+        Math.random() * 0.4 + 0.2;
 
     heartsContainer.appendChild(heart);
 
+    // Remove after animation
     setTimeout(() => {
         heart.remove();
-    }, 6000);
+    }, duration * 1000);
 }
+
+
+/* Create a heart every 900ms */
 
 setInterval(createHeart, 900);
 
 
-/* Add heart animation */
+/* Create a few immediately when page opens */
 
-const style = document.createElement("style");
-
-style.innerHTML = `
-
-@keyframes floatHeart {
-
-    0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0;
-    }
-
-    20% {
-        opacity: 0.6;
-    }
-
-    100% {
-        transform:
-            translateY(-110vh)
-            rotate(360deg);
-
-        opacity: 0;
-    }
-
+for (let i = 0; i < 5; i++) {
+    setTimeout(createHeart, i * 400);
 }
-
-`;
-
-document.head.appendChild(style);
